@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>David Studios</title>
+
   <style>
     body {
       background: black;
@@ -11,17 +12,21 @@
       text-align: center;
       padding: 40px;
     }
-    h1 {
-      font-size: 48px;
-      text-shadow: 0 0 10px #00ff00;
+
+    #logo {
+      font-size: 50px;
+      text-shadow: 0 0 15px #00ff00;
+      margin-bottom: 30px;
     }
+
     .box {
       border: 2px solid #00ff00;
       padding: 20px;
       margin: 20px auto;
-      max-width: 600px;
+      max-width: 650px;
       box-shadow: 0 0 15px #00ff00;
     }
+
     a {
       display: inline-block;
       margin: 10px;
@@ -32,9 +37,11 @@
       font-weight: bold;
       border-radius: 6px;
     }
+
     a:hover {
       background: #00cc00;
     }
+
     .footer {
       margin-top: 40px;
       font-size: 14px;
@@ -45,28 +52,39 @@
 
 <body>
 
-  <h1>💻 DAVID STUDIOS</h1>
+  <div id="logo">💻 DAVID STUDIOS</div>
 
   <div class="box">
-    <p>
-      David Studios est un studio Roblox créé par David, passionné par la création de jeux.
-      Ici tu trouveras des expériences fun, des projets en cours et des mises à jour.
-      Rejoins la communauté et joue aux jeux de David Studios !
-    </p>
+    <p id="typing"></p>
   </div>
 
   <div class="box">
     <h2>🎮 MES JEUX ROBLOX</h2>
 
-    <a href="#" target="_blank">Jeu 1</a>
-    <a href="#" target="_blank">Jeu 2</a>
-    <a href="#" target="_blank">Bientôt...</a>
+    <a href="https://www.roblox.com/games/9309351610/Car-Dealership" target="_blank">Car Dealership</a>
+    <a href="https://www.roblox.com/games/9383407114/Survivre-67-jours-dans-la-foret" target="_blank">Survivre 67 jours dans la forêt !</a>
+    <a href="https://www.roblox.com/games/9514554339/Rival-X" target="_blank">Rival X</a>
   </div>
 
   <div class="footer">
     © 2026 David Studios 
   </div>
 
+  <script>
+    const text = "Bienvenue chez David Studios. Studio Roblox créé par David, passionné par la création de jeux. Ici tu trouveras des projets fun, des mises à jour et de nouvelles expériences à venir. Rejoins l'aventure !";
+    let i = 0;
+    const speed = 40;
+
+    function typeWriter() {
+      if (i < text.length) {
+        document.getElementById("typing").innerHTML += text.charAt(i);
+        i++;
+        setTimeout(typeWriter, speed);
+      }
+    }
+
+    typeWriter();
+  </script>
+
 </body>
 </html>
-
